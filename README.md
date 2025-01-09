@@ -45,3 +45,12 @@ id : 24252e796d4817ddaa4dd04384e1c7b24687e61e0e07a5af2745af194bee72d0
 #creation of phpmyadmin container
 docker run -d --name phpmyadmin-container --network test_docker -e PMA_HOST=mysql-container -p 8080:80 phpmyadmin/phpmyadmin
 id : 5f04b9b947b00910543779d8e35b4719c57ed1549715e5f8b3cc9dd8f374687c
+
+la commande docker compose permet de lancer plusieurs conntainer en meme temps grace a la configuration d'un fichier yaml.
+la commande docker run permet de lancer un seul container.
+
+#is the command to start all the containers from the yaml file
+docker compose up
+
+#to stop all containers from the compose
+docker compose stop
