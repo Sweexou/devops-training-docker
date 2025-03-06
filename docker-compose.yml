@@ -1,0 +1,28 @@
+version: "3.9"
+
+services:
+  # Database
+  db:
+    image: mysql:latest
+    container_name: my_mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test_db
+    networks:
+      - test_docker
+
+  # phpmyadmin
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: db
+    networks:
+      - test_docker
+
+networks:
+  test_docker:
+
+volumes:
+  db_data:
